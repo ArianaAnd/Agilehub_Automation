@@ -1,0 +1,6 @@
+C:\Users\Ariana\Desktop\Agilehub_Automation\Demo\bin\Debug\Demo.exe.config
+C:\Users\Ariana\Desktop\Agilehub_Automation\Demo\bin\Debug\Demo.exe
+C:\Users\Ariana\Desktop\Agilehub_Automation\Demo\bin\Debug\Demo.pdb
+C:\Users\Ariana\Desktop\Agilehub_Automation\Demo\obj\Debug\Demo.csproj.CoreCompileInputs.cache
+C:\Users\Ariana\Desktop\Agilehub_Automation\Demo\obj\Debug\Demo.exe
+C:\Users\Ariana\Desktop\Agilehub_Automation\Demo\obj\Debug\Demo.pdb
