@@ -1,0 +1,30 @@
+﻿{
+   {
+      "id": 1,
+      "name": "Andrisan Ariana",
+      "email": "ariana@yahoo.com",
+      "address": "Brasov",
+      "phone": "0722334455",
+      "password": "password123"
+
+    }
+  ,
+
+  {
+    "id": 2,
+    "name": "Ariana A",
+    "email": "ariana@gmail.com",
+    "address": "Brasov Brasov",
+    "phone": "0722334455",
+    "password": "password124"
+  },
+
+  {
+    "id": 3,
+    "address": "Brasov",
+    "email": "test_admin@gmail.com",
+    "name": "Admin",
+    "password": "password123",
+    "phone": "0722334455"
+  }
+}
