@@ -30,9 +30,6 @@ namespace Tema28.PageObjectsTeatruSica
             artistClickImage.Click();
             firstShow.Click();
 
-            
-               
-
 
 
         }

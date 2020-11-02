@@ -18,7 +18,7 @@ namespace Tema28.PageObjectsDemoqa
             lastName.SendKeys("Ariana");
             email.SendKeys("ariana@yahoo.com");
             genderRadioButton.Click();
-            mobileField.SendKeys("07235689101");
+            mobileField.SendKeys("0711111111");
             dateOfBirth.Click();
             dayClick.Click();
 

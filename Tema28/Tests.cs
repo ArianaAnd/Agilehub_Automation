@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Tema28.PageObjects;
+using Tema28;
+using Tema28.PageObjectsG;
 using Tema28.PageObjectsCasqad;
 using Tema28.PageObjectsDemoqa;
 using Tema28.PageObjectsTeatruSica;
@@ -29,7 +29,7 @@ namespace Tema28
 
             Driver.Navigate().GoToUrl("http://google.com/");
             // Arrange
-            Google homePage = new Google(Driver);
+            GoogleSearch homePage = new GoogleSearch(Driver);
 
             // Act
             Driver.SwitchTo().Frame(0);
@@ -40,11 +40,14 @@ namespace Tema28
             Driver.Navigate().Back();
 
             //Assert
-            NUnit.Framework.Assert.IsTrue(!homePage.imageFrame.Displayed);
+            Assert.IsTrue(!homePage.imageFrame.Displayed);
 
         }
 
 
+
+
+        [Test]
         public void DemoqaForm()
         {
             Driver.Manage().Window.Maximize();
@@ -60,9 +63,10 @@ namespace Tema28
 
             //Assert
 
-            NUnit.Framework.Assert.IsTrue(formPage.VerifyElementDisplayed(formPage.submitButton));
+            Assert.IsTrue(formPage.VerifyElementDisplayed(formPage.submitButton));
+           
         }
-
+        [Test]
 
         public void DemoqaTextBoxTest()
         {
@@ -76,9 +80,13 @@ namespace Tema28
             textboxPage.FillDemoqaTextBox();
 
             //Assert
-            NUnit.Framework.Assert.IsTrue(textboxPage.VerifyElementDisplayed(textboxPage.submit));
+            Assert.IsTrue(textboxPage.VerifyElementDisplayed(textboxPage.submit));
         }
 
+
+
+
+        [Test]
         public void TeatruSicaTest()
         {
             Driver.Manage().Window.Maximize();
@@ -89,11 +97,21 @@ namespace Tema28
 
             //Act
             testPage.GoToTeatruSicaPage();
+          
 
             //Assert
-            NUnit.Framework.Assert.IsTrue(testPage.NameShowReturn.Displayed);
+            //  ((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0, 500)"); 
+            //Assert.IsTrue(testPage.NameShowReturn.Displayed);
+            //Assert.IsTrue(Driver.FindElement(By.XPath("//*[@id='av-layout-grid-1']/div[1]/div/div[2]/div/a/span")).Displayed);
+            Assert.IsTrue(testPage.cumparaBiletButton.Displayed);
         }
 
+
+
+
+
+
+        [Test]
         public void Untold()
         {
             Driver.Manage().Window.Maximize();
@@ -106,87 +124,12 @@ namespace Tema28
             untoldTest.GoToUntoldPage();
 
             //Assert
-            NUnit.Framework.Assert.IsTrue(untoldTest.logo.Displayed);
+           // Assert.IsTrue(Driver.FindElement(By.XPath("//*[@id='logo']/img")).Displayed);
+            Assert.AreEqual("https://untold.com/", Driver.Url);
         }
 
-        public void LoginIntoApplication()
-        {
-            Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
-            //Arrange
-            LoginPage myLoginPageuser = new LoginPage(Driver);
-            HomePage myHomePage = new HomePage(Driver);
-            //Act
-            myLoginPageuser.LoginIntoApplication("admin.test3@gmail.com", "password123");
-            //Assert
-            NUnit.Framework.Assert.IsTrue(myHomePage.DeconectareButton.Displayed);
-        }
-        [Test]
-        public void LoginIntoApplicationWithInvalidEmailAndPassword()
-        {
-            Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
-            //Arrage
-            HomePage myHomePage = new HomePage(Driver);
-            myHomePage.GoToAutentificarePage();
-            LoginPage myLoginPageadmin = new LoginPage(Driver);
-            //Act
-            myLoginPageadmin.LoginIntoApplication("abcedfs@gmail.com", "dasdcsdfds");
-            //Asert
-            NUnit.Framework.Assert.IsTrue(myLoginPageadmin.VerifyElementDisplayed(myHomePage.DeconectareButton));
-        }
-        public void AdaugaInCosUtilizator()
-        {
-            Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
 
-            //Arrange
-            LoginPage myLoginPage = new LoginPage(Driver);
-            ProductPage myProductPage = new ProductPage(Driver);
-            HomePage myHomePage = new HomePage(Driver);
-            //Act
-            myProductPage.AdaugaInCos();
-            //Assert
-            NUnit.Framework.Assert.IsTrue(myHomePage.DeconectareButton.Displayed);
-        }
 
-        public void Inscriere()
-        {
-            Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("http://demosite.casqad.org/auth/register");
-            //Arrange
-            InregistrationPage inscriere = new InregistrationPage(Driver);
-            HomePage myhomepage = new HomePage(Driver);
-            //Act
-            inscriere.GoToInregistrationPage();
-            myhomepage.GoToAutentificarePage();
-            //Assert
-            NUnit.Framework.Assert.IsTrue(myhomepage.DeconectareButton.Displayed);
-        }
-
-        public void ClickNavbar()
-        {
-            Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
-
-            Navbar myNavbar = new Navbar(Driver);
-            myNavbar.Navigare();
-            NUnit.Framework.Assert.IsTrue(myNavbar.laptopuri.Displayed);
-
-        }
-
-        public void ClickAdmin()
-        {
-            Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
-            //Arrange
-            LoginPage myLoginPageuser = new LoginPage(Driver);
-            HomePage myHomePage = new HomePage(Driver);
-            //Act
-            myLoginPageuser.LoginClickAdmin("admin.test3@gmail.com", "password123");
-            //Assert
-            NUnit.Framework.Assert.IsTrue(myHomePage.DeconectareButton.Displayed);
-        }
 
     }
        
