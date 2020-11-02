@@ -118,18 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hooks.cs" />
-    <Compile Include="PageObjectsCasqad\HomePage.Actions.cs" />
-    <Compile Include="PageObjectsCasqad\HomePage.Locators.cs" />
-    <Compile Include="PageObjectsCasqad\InregistrationPage.Actions.cs" />
-    <Compile Include="PageObjectsCasqad\InregistrationPage.Locators.cs" />
-    <Compile Include="PageObjectsCasqad\LoginPage.Actions.cs" />
-    <Compile Include="PageObjectsCasqad\LoginPage.Locators.cs" />
-    <Compile Include="PageObjectsCasqad\Navbar.Actions.cs" />
-    <Compile Include="PageObjectsCasqad\NavbarLocators.cs" />
-    <Compile Include="PageObjectsCasqad\ProductPage.Actions.cs" />
-    <Compile Include="PageObjectsCasqad\ProductPage.Locators.cs" />
-    <Compile Include="PageObjectsCasqad\UserPage.Actions.cs" />
-    <Compile Include="PageObjectsCasqad\UserPage.Locators.cs" />
     <Compile Include="PageObjectsDemoqa\Demoqa.Actions.cs" />
     <Compile Include="PageObjectsDemoqa\Demoqa.Locators.cs" />
     <Compile Include="PageObjectsDemoqa\DemoqaTextBox.Actions.cs" />

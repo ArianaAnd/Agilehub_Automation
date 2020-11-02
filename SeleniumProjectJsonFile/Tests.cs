@@ -8,14 +8,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using SeleniumProjectJsonFile.PageObjects;
 
 namespace SeleniumProjectJsonFile
 {
-    [TestClass]
+    
 
   
 
@@ -25,7 +25,7 @@ namespace SeleniumProjectJsonFile
 
             public List<UserTest> ReadJSON()
             {
-                var jsonString = File.ReadAllText("UsersTest.json");
+                var jsonString = File.ReadAllText("C:\\Users\\Ariana\\Desktop\\Agilehub_Automation\\SeleniumProjectJsonFile");
                 var jsonModel = JsonConvert.DeserializeObject<List<UserTest>>(jsonString);
 
                 return jsonModel;
@@ -42,12 +42,11 @@ namespace SeleniumProjectJsonFile
                 homePage.Authenticate();
 
                 //Assert
-                NUnit.Framework.Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div/div[2]/h3")).Displayed);
+                Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Autentificare']")).Displayed);
             }
 
-            // a.	Logati-va in aplicatie.
             [Test]
-            public void LogInAdmin()
+            public void LoginAdmin()
             {
                 var jsonModel = ReadJSON();
                 Authenticate();
@@ -57,10 +56,10 @@ namespace SeleniumProjectJsonFile
                 LoginPage loginPage = new LoginPage(Driver);
 
                 // Act
-                loginPage.EnterCredentials(jsonModel[2].Email, jsonModel[2].Password);
+                loginPage.AddVal(jsonModel[2].Email, jsonModel[2].Password);
 
                 //Assert
-                NUnit.Framework.Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
+                Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
             }
 
 
@@ -72,11 +71,11 @@ namespace SeleniumProjectJsonFile
                 SignUp signUp = new SignUp(Driver);
 
                 // Act
-                signUp.EnterSignup();
+                signUp.ClickSignUp();
                 signUp.SigUpFormFill();
 
                 //Assert
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div/div[2]/div/button")).Displayed);
+              Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div/div[2]/div/button")).Displayed);
             }
 
             public void LogOut()
@@ -84,11 +83,13 @@ namespace SeleniumProjectJsonFile
                 Driver.FindElement(By.XPath("//*[@id='collapsibleNavbar']/ul[2]/li[2]/a")).Click();
             }
 
-            // b.	Adaugati in cos un produs ca si utilizator. // c.	Adaugati in cos un produs ca si admin.
+           
             [Test]
-            public void UserAddToCart()
+            public void AddToCartUSERS()
             {
-                Authenticate();
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
+      
                 // Arrange
 
                 var jsonModel = ReadJSON();
@@ -96,37 +97,52 @@ namespace SeleniumProjectJsonFile
                 HomePage homePage = new HomePage(Driver);
                 LoginPage loginPage = new LoginPage(Driver);
 
-                // Act
-                loginPage.EnterCredentials(jsonModel[0].Email, jsonModel[0].Password); // user
-                                                                                       // loginPage.EnterCredentials("admin.test3@gmail.com", "password123"); //admin
-
-                homePage.AddToCart(Driver.FindElement(By.XPath("/html/body/div/div[1]/div[2]/div/div/div/div/a")));
+            // Act
+            loginPage.AddVal(jsonModel[0].Email, jsonModel[0].Password);
+            homePage.viewDetails.Click();
 
                 //Assert
-                NUnit.Framework.Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div[1]/div[2]/table/tbody/tr[1]/td[2]")).Text == "Laptop ASUS X509FJ");
+            Assert.IsTrue(Driver.FindElement(By.XPath("//*[text()='Laptop ASUS X509FJ']")).Text == "Laptop ASUS X509FJ");
             }
 
 
-            // d.	Faceti inscrierea si logati-va cu noul cont.
+            
             [Test]
             public void AuthenticateAndLogin()
             {
-                SignUp();
-                LogInAdmin();
+           
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
+            //Arrange
+             Authenticate();
+            SignUp signUp = new SignUp(Driver);
+            HomePage homePage = new HomePage(Driver);
+            LoginPage loginPage = new LoginPage(Driver);
+            //Act
+            SignUp();
+                LoginAdmin();
+            //Assert
+                   Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Autentificare']")).Displayed);
 
             }
 
-            // e.	Logati-va si deconectati-va din site.
             [Test]
             public void LoginLogOut()
             {
-                LogInAdmin();
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
+            //Arrange
+            SignUp signUp = new SignUp(Driver);
+            HomePage homePage = new HomePage(Driver);
+            LoginPage loginPage = new LoginPage(Driver);
+            //Act
+            LoginAdmin();
                 LogOut();
-
-               NUnit.Framework.Assert.IsTrue(Driver.FindElement(By.XPath("//*[@id='collapsibleNavbar']/ul[2]/li[1]/a")).Displayed);
+            //Assert
+              Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Coș']")).Displayed);
             }
 
-            // f.	Dati click pe fiecare meniu (orizontal).
+          
             [Test]
             public void ClickEveryMenu()
             {
@@ -137,59 +153,55 @@ namespace SeleniumProjectJsonFile
                 HomePage homePage = new HomePage(Driver);
 
                 //Act
-                homePage.ClickEveryMenu();
+                homePage.ClickeveryMenu();
 
                 //Assert
-                NUnit.Framework.Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div[1]/div[2]/div/div/div/div/h5")).Text == "Rucsac laptop Trust Lima");
+               Assert.IsTrue(Driver.FindElement(By.XPath("//*[@class='card-title']")).Text == "Rucsac laptop Trust Lima");
             }
 
 
-            // g.	Ca si admin, dati click pe buton de administrare.
             [Test]
-            public void ClickAdminButton()
+            public void ClickAdminBtn()
             {
-                LogInAdmin();
+                LoginAdmin();
 
                 HomePage homePage = new HomePage(Driver);
                 AdminPage adminPage = new AdminPage(Driver);
 
                 homePage.adminButton.Click();
 
-                NUnit.Framework.Assert.IsTrue(adminPage.addProductButton.Displayed);
+              Assert.IsTrue(adminPage.addProductButton.Displayed);
             }
 
 
-            // h.	Ca si admin, dati click pe buton de administrare si accesati meniul Utilizatori.
             [Test]
-            public void ClickUsersButton()
+            public void ClickUsersBtn()
             {
-                LogInAdmin();
+                LoginAdmin();
 
                 HomePage homePage = new HomePage(Driver);
                 AdminPage adminPage = new AdminPage(Driver);
 
                 homePage.adminButton.Click();
-                adminPage.ClickUsersButton();
+                adminPage.ClickUsersBtn();
 
-                NUnit.Framework.Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div/div/table/thead/tr/th[8]")).Text == "Acțiuni");
+               Assert.IsTrue(Driver.FindElement(By.XPath("//*[text()='Acțiuni']")).Text == "Acțiuni");
             }
 
-            // i.	Ca si admin, dati click pe buton de administrare si accesati meniul Utilizatori, alegeti un utilizator si editati.
-            [Test]
-            public void EditUser()
-            {
-                var jsonModel = ReadJSON();
-                LogInAdmin();
+        [Test]
+        public void EditUsers()
+        {
+            var jsonModel = ReadJSON();
+            LoginAdmin();
 
-                HomePage homePage = new HomePage(Driver);
-                AdminPage adminPage = new AdminPage(Driver);
+            HomePage homePage = new HomePage(Driver);
+            AdminPage adminPage = new AdminPage(Driver);
 
-                homePage.adminButton.Click();
-                adminPage.EditUSer(jsonModel[1].Name, jsonModel[1].Email, jsonModel[1].Phone);
+            homePage.adminButton.Click();
+            adminPage.EditUsers(jsonModel[1].Name, jsonModel[1].Email, jsonModel[1].Phone);
 
-                NUnit.Framework.Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div")).Text.Contains("The user has been successfully updated"));
-                //Assert.IsTrue(adminPage.userEmailAdminTextBox.Text == "radu@gmail.com" && adminPage.userNameAdminTextBox.Text == "Radu" && adminPage.userPhoneAdminTextBox.Text == "0733556445");
-            }
+          Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div")).Text.Contains("The user has been successfully updated"));
+        }
 
         }
     }

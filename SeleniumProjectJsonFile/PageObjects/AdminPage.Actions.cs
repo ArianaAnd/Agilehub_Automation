@@ -22,14 +22,14 @@ namespace SeleniumProjectJsonFile.PageObjects
 
         }
 
-        public void ClickUsersButton()
+        public void ClickUsersBtn()
         {
             usersButton.Click();
         }
 
-        public void EditUSer(string name, string email, string phone)
+        public void EditUsers(string name, string email, string phone)
         {
-            ClickUsersButton();
+            ClickUsersBtn();
             editUserButton.Click();
             userNameAdminTextBox.Clear();
             userNameAdminTextBox.SendKeys(name);

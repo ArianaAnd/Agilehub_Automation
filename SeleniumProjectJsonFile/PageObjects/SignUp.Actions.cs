@@ -22,20 +22,20 @@ namespace SeleniumProjectJsonFile.PageObjects
 
         }
 
-        public void EnterSignup()
+        public void ClickSignUp()
         {
-            signUpButton.Click();
+            SignUpButton.Click();
         }
 
         public void SigUpFormFill()
         {
-            signUpNameTextBox.SendKeys("Andrisan Ariana");
-            signUpEmailTextBox.SendKeys("ariana@yahoo.com");
-            signUpPhoneTextBox.SendKeys("0722334455");
-            signUpAddressTextBox.SendKeys("Brasov");
-            signUpPasswordextBox.SendKeys("parola123");
-            signUpPasswordRepeatTextBox.SendKeys("parola123");
-            signUpInscriereButton.Click();
+            NameTextBox.SendKeys("Andrisan Ariana");
+            EmailTextBox.SendKeys("ariana@yahoo.com");
+            PhoneTextBox.SendKeys("0711111111");
+            AddressTextBox.SendKeys("Brasov");
+            PasswordTextBox.SendKeys("parola123");
+            PasswordRepeatTextBox.SendKeys("parola123");
+            SignUpButton.Click();
         }
     }
 }

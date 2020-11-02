@@ -22,12 +22,17 @@ namespace SeleniumProjectJsonFile.PageObjects
 
         }
 
-        public void EnterCredentials(string user, string password)
+        public void AddVal(string user, string password)
         {
             emailTextBox.Click();
             emailTextBox.SendKeys(user);
             passwordTextBox.SendKeys(password);
             submitButton.Click();
+        }
+
+        internal void VerifyElementContainsText(IWebElement alertMessage, string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

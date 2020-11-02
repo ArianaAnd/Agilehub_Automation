@@ -9,7 +9,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Tema28;
 using Tema28.PageObjectsG;
-using Tema28.PageObjectsCasqad;
 using Tema28.PageObjectsDemoqa;
 using Tema28.PageObjectsTeatruSica;
 using Tema28.PageObjectsUntold;

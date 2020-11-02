@@ -32,13 +32,12 @@ namespace SeleniumProjectJsonFile.PageObjects
             addToCartButton.Click();
         }
 
-        public void ClickEveryMenu()
+        public void ClickeveryMenu()
         {
-            laptopuriButton.Click();
-            telefoaneButton.Click();
-            fotoButton.Click();
-            cartiButton.Click();
-            accesoriiButton.Click();
+            laptopsButton.Click();
+            phonesButton.Click();
+            phonesButton.Click();
+            accesoryButton.Click();
 
         }
     }
