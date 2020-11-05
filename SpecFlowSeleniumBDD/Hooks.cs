@@ -41,19 +41,14 @@ namespace SpecFlowSeleniumBDD
 
 
         [AfterScenario]
-        public void AfterScenario()
+        public  void AfterScenario()
         {
             Driver.Quit();
             //TODO: implement logic that has to run after executing each scenario
         }
 
 
-        [AfterFeature]
-        public void AfterFeature()
-        {
-            Driver.Quit();
-            //TODO: implement logic that has to run after executing each scenario
-        }
+ 
 
     }
 }
