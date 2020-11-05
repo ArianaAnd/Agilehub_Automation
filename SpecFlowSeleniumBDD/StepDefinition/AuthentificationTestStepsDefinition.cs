@@ -27,7 +27,7 @@ namespace SpecFlowSeleniumBDD.StepDefinition
         [Given(@"I login with valid user")]
         public void GivenILoginWithValidUser()
         {
-            HomePage myHomePage = new HomePage(Driver);            myHomePage.Authenticate();            LoginPage myLoginPage = new LoginPage(Driver);            myLoginPage.EnterCredentials("admin.test3@gmail.com", "password123");            Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
+            HomePage myHomePage = new HomePage(Driver);            myHomePage.GoToAuthentificatePage();            LoginPage myLoginPage = new LoginPage(Driver);            myLoginPage.EnterCredentials("admin.test3@gmail.com", "password123");            Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
 
         }
 

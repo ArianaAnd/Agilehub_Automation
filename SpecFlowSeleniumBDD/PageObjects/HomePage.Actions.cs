@@ -1,47 +1,46 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 
 namespace SpecFlowSeleniumBDD.PageObjects
 {
     partial class HomePage
     {
         private IWebDriver _driver;
-        private WebDriverWait _driverWait;
         public HomePage(IWebDriver driver)
         {
             _driver = driver;
-
-            _driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
-
-            _driverWait.IgnoreExceptionTypes();
-
         }
-
-        public void Authenticate()
+        public void GoToAuthentificatePage()
         {
-            authenticationButton.Click();
+            AutentificareButton.Click();
         }
-
-        public void AddToCart(IWebElement element)
+        public void GoToVeziDetaliiPage()
         {
-            element.Click();
-            addToCartButton.Click();
+            VeziDetaliiButton.Click();
         }
-
-        public void ClickEveryMenu()
+        public void GoToCosPage()
         {
-            laptopuriButton.Click();
-            telefoaneButton.Click();
-            fotoButton.Click();
-            cartiButton.Click();
-            accesoriiButton.Click();
-
+            CosButton.Click();
         }
-
+        public void GoToAdministrarePage()
+        {
+            AdministrationButton.Click();
+        }
+        public void GoToUtilizatoriPage()
+        {
+            UtilizatoriButton.Click();
+        }
+        public void GoToACategoryFromAdministrationPanel(string categoryAdmin)
+        {
+            CategoryAdministrationButton(categoryAdmin).Click();
+        }
+        public void VerifyPageSuccessfullyOpened(string pageAdmin)
+        {
+            Assert.IsTrue(AddButtonFromCategory(pageAdmin).Displayed);
+        }
+        public void VerifyUtilizatoriPageSuccessfullyOpened()
+        {
+            Assert.IsTrue(RolFieldTable.Displayed);
+        }
     }
 }
