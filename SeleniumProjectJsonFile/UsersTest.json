@@ -1,17 +1,16 @@
 ﻿{
-   {
-      "id": 1,
-      "name": "Andrisan Ariana",
-      "email": "ariana@yahoo.com",
-      "address": "Brasov",
-      "phone": "0711111111",
-      "password": "password123"
-
-    }
-  ,
+  {
+    "id":  1,
+    "address": "Brasov",
+    "email": "ariana@yahoo.com",
+    "id": 1,
+    "name": "Andrisan Ariana",
+    "password": "password123",
+    "phone": "0711111111"
+  },
 
   {
-    "id": 2,
+  "id":  2,
     "name": "Ariana A",
     "email": "ariana@gmail.com",
     "address": "Brasov Brasov",
@@ -20,7 +19,7 @@
   },
 
   {
-    "id": 3,
+  "id":  3,
     "address": "Brasov",
     "email": "test_admin@gmail.com",
     "name": "Admin",

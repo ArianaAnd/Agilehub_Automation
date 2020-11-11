@@ -12,8 +12,7 @@ using Tema28.PageObjectsG;
 using Tema28.PageObjectsDemoqa;
 using Tema28.PageObjectsTeatruSica;
 using Tema28.PageObjectsUntold;
-
-
+using com.sun.tools.corba.se.idl.toJavaPortable;
 
 namespace Tema28
 {
@@ -31,7 +30,7 @@ namespace Tema28
             GoogleSearch homePage = new GoogleSearch(Driver);
 
             // Act
-            Driver.SwitchTo().Frame(0);
+            Driver.SwitchTo().Frame(0);  //https://www.guru99.com/handling-iframes-selenium.html
             homePage.AcceptGoogleTerms();
             homePage.SearchGoogleImage("paris");
             homePage.SelectGoogleImage();
@@ -88,26 +87,27 @@ namespace Tema28
         [Test]
         public void TeatruSicaTest()
         {
+
             Driver.Manage().Window.Maximize();
             Driver.Navigate().GoToUrl("https://www.teatrulsicaalexandrescu.ro/?lang=en");
 
             //Arrange
+
             TeatruSica testPage = new TeatruSica(Driver);
+            
 
             //Act
             testPage.GoToTeatruSicaPage();
-          
-
             //Assert
-            //  ((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0, 500)"); 
+            //((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0,1000)"); 
             //Assert.IsTrue(testPage.NameShowReturn.Displayed);
             //Assert.IsTrue(Driver.FindElement(By.XPath("//*[@id='av-layout-grid-1']/div[1]/div/div[2]/div/a/span")).Displayed);
-            Assert.IsTrue(testPage.cumparaBiletButton.Displayed);
+            // Assert.IsTrue(testPage.cumparaBiletButton.Displayed);
+            ((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0,500)");
+            Assert.IsTrue(testPage.firstShow.Displayed);
         }
 
-
-
-
+      
 
 
         [Test]

@@ -8,6 +8,7 @@ namespace SeleniumProjectJsonFile
 {
     public class Model
     {
-        public Dictionary<string, UserTest> Users { get; set; }
+        //public Dictionary<string, UserTest> Users { get; set; }
+        public List<UserTest> Users { get; set; }
     }
 }

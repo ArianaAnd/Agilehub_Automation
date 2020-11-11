@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
 using SeleniumProjectJsonFile.PageObjects;
 
 namespace SeleniumProjectJsonFile
@@ -25,7 +24,7 @@ namespace SeleniumProjectJsonFile
 
             public List<UserTest> ReadJSON()
             {
-                var jsonString = File.ReadAllText("C:\\Users\\Ariana\\Desktop\\Agilehub_Automation\\SeleniumProjectJsonFile");
+                var jsonString = File.ReadAllText("C:\\Users\\Ariana\\Desktop\\Agilehub_Automation\\SeleniumProjectJsonFile\\UsersTest.json");
                 var jsonModel = JsonConvert.DeserializeObject<List<UserTest>>(jsonString);
 
                 return jsonModel;
@@ -40,8 +39,10 @@ namespace SeleniumProjectJsonFile
 
                 // Act
                 homePage.Authenticate();
+            
 
                 //Assert
+                ((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0, 500)"); 
                 Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Autentificare']")).Displayed);
             }
 
@@ -93,6 +94,7 @@ namespace SeleniumProjectJsonFile
                 // Arrange
 
                 var jsonModel = ReadJSON();
+            Authenticate();
                 SignUp signUp = new SignUp(Driver);
                 HomePage homePage = new HomePage(Driver);
                 LoginPage loginPage = new LoginPage(Driver);

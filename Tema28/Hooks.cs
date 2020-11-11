@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Tema28
         [SetUp]
         public void Setup()
         {
-            Driver = new ChromeDriver();
+            Driver = new FirefoxDriver();
 
             Driver.Manage().Window.Maximize();
 

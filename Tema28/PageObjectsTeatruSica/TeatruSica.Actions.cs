@@ -24,18 +24,15 @@ namespace Tema28.PageObjectsTeatruSica
         }
         public void GoToTeatruSicaPage()
         {
-           teamButton.Click();            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0, 500)");
+           teamButton.Click();            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0,500)");
             artistButton.Click();
-            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0, 600)");
+            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0,600)");
             artistClickImage.Click();
             firstShow.Click();
 
 
 
         }
-        public bool VerifyElementDisplayed(IWebElement element)
-        {
-            return element.Displayed;
-        }
+       
     }
 }
