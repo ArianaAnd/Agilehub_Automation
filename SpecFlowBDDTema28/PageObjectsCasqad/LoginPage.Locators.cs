@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumProjectJsonFile.PageObjects
+namespace SpecFlowBDDTema28.PageObjects
 {
     partial class LoginPage
     {
@@ -17,6 +17,6 @@ namespace SeleniumProjectJsonFile.PageObjects
         //private IWebElement submitButton => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/form/button"));
         private IWebElement submitButton => _driver.FindElement(By.CssSelector("button[type=submit]"));
          public IWebElement AlertMessage => _driver.FindElement(By.ClassName("alert"));
-       
+       private IWebElement AutentificareButtonLoginPage => _driverWait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button[type=submit]")));
     }
 }

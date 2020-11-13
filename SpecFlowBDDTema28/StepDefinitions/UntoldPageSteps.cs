@@ -12,6 +12,7 @@ namespace SpecFlowBDDTema28.StepDefinitions
         public void WhenIGoToHomePageFromTheNavigationMenu()
         {
             Untold festivalPage = new Untold(Driver);
+            festivalPage.NavigateToUrl("https://wwww.untold.com/");
             festivalPage.GoToUntoldPage();
         }
         

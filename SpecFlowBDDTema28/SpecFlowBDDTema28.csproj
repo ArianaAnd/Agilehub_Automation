@@ -134,6 +134,10 @@
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Hooks.cs" />
+    <Compile Include="PageObjectsCasqad\AddToCart.Actions.cs" />
+    <Compile Include="PageObjectsCasqad\AddToCart.Locators.cs" />
+    <Compile Include="PageObjectsCasqad\ProductPage.Actions.cs" />
+    <Compile Include="PageObjectsCasqad\ProductPage.Locators.cs" />
     <Compile Include="PageObjectsDemoqa\Demoqa.Actions.cs" />
     <Compile Include="PageObjectsDemoqa\Demoqa.Locators.cs" />
     <Compile Include="PageObjectsDemoqa\DemoqaTextBox.Actions.cs" />
@@ -144,7 +148,18 @@
     <Compile Include="PageObjectsTeatruSica\TeatruSica.Locators.cs" />
     <Compile Include="PageObjectsUntold\Untold.Actions.cs" />
     <Compile Include="PageObjectsUntold\Untold.Locators.cs" />
+    <Compile Include="PageObjectsCasqad\AdminPage.Actions.cs" />
+    <Compile Include="PageObjectsCasqad\AdminPage.Locators.cs" />
+    <Compile Include="PageObjectsCasqad\HomePage.Actions.cs" />
+    <Compile Include="PageObjectsCasqad\HomePage.Locators.cs" />
+    <Compile Include="PageObjectsCasqad\LoginPage.Actions.cs" />
+    <Compile Include="PageObjectsCasqad\LoginPage.Locators.cs" />
+    <Compile Include="PageObjectsCasqad\SignUp.Actions.cs" />
+    <Compile Include="PageObjectsCasqad\SignUp.Locators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepDefinitions\AddToCartPageSteps.cs" />
+    <Compile Include="StepDefinitions\AdministrationPageSteps.cs" />
+    <Compile Include="StepDefinitions\AuthentificationPageSteps.cs" />
     <Compile Include="StepDefinitions\DemoqaSteps.cs" />
     <Compile Include="StepDefinitions\GoogleSearchSteps.cs" />
     <Compile Include="StepDefinitions\HelpSteps.cs" />
@@ -152,6 +167,9 @@
     <Compile Include="StepDefinitions\UntoldPageSteps.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Features\AddToCartPage.feature" />
+    <None Include="Features\AdministrationPage.feature" />
+    <None Include="Features\AuthentificationPage.feature" />
     <None Include="Features\Demoqa.feature" />
     <None Include="Features\GoogleSearch.feature" />
     <None Include="Features\TeatruSica.feature" />

@@ -7,12 +7,18 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumProjectJsonFile.PageObjects
+namespace SpecFlowBDDTema28.PageObjects
 {
     partial class HomePage
     {
         private IWebElement authenticationButton => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/h3"));
         private IWebElement addToCartButton => _driver.FindElement(By.XPath("/html/body/div/div[1]/div[2]/div/div[2]/a"));
+
+        internal void GoToAuthentificatePage()
+        {
+            throw new NotImplementedException();
+        }
+
         public IWebElement signUpBuutton => _driver.FindElement(By.XPath("//a[text()='Înscriere']"));
          public IWebElement logOutButton => _driver.FindElement(By.XPath("//a[text()='Deconectare']"));
         public IWebElement orderNowButton => _driver.FindElement(By.XPath("/html/body/div/div[1]/div[2]/table/tbody/tr[3]/th[4]/a"));

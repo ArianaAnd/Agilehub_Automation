@@ -42,3 +42,4 @@ C:\Users\Ariana\Desktop\Agilehub_Automation\SpecFlowBDDTema28\obj\Debug\SpecFlow
 C:\Users\Ariana\Desktop\Agilehub_Automation\SpecFlowBDDTema28\obj\Debug\SpecFlowBDDTema28.csproj.CopyComplete
 C:\Users\Ariana\Desktop\Agilehub_Automation\SpecFlowBDDTema28\obj\Debug\SpecFlowBDDTema28.dll
 C:\Users\Ariana\Desktop\Agilehub_Automation\SpecFlowBDDTema28\obj\Debug\SpecFlowBDDTema28.pdb
+C:\Users\Ariana\Desktop\Agilehub_Automation\SpecFlowBDDTema28\bin\Debug\SeleniumExtras.WaitHelpers.dll

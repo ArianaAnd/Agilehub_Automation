@@ -1,11 +1,12 @@
 ﻿Feature: AuthentificationPage
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	In order to check login
+	As a admin user
+	I want to authenticate into casqad.org
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+@LoginwithUserDto
+Scenario: ValidateLoginUsingDto
+	Given I navigate to authentication page
+	When I login with following credentials
+	| userEmail             | userPassword |
+	| admin.test3@gmail.com | password123  |
+	Then I am logged in

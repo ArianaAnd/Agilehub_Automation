@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumProjectJsonFile.PageObjects
+namespace SpecFlowBDDTema28.PageObjects
 {
     partial class AdminPage
     {
@@ -19,5 +19,6 @@ namespace SeleniumProjectJsonFile.PageObjects
         public IWebElement userPhoneAdminTextBox => _driver.FindElement(By.XPath("/html/body/div/form/div/div[1]/div[3]/input"));
 
         private IWebElement updateUserButton => _driver.FindElement(By.XPath("/html/body/div/form/div/div[1]/button"));
+        public IWebElement UsersTableHeader => _driver.FindElement(By.XPath("//thead"));
     }
 }

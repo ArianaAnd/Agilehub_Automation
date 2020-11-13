@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumProjectJsonFile.PageObjects
+namespace SpecFlowBDDTema28.PageObjects
 {
     partial class HomePage
     {
@@ -39,6 +39,10 @@ namespace SeleniumProjectJsonFile.PageObjects
             phonesButton.Click();
             accesoryButton.Click();
 
+        }
+        public void ViewDetails()
+        {
+            viewDetails.Click();
         }
     }
 }

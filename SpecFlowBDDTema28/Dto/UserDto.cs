@@ -37,4 +37,6 @@ namespace SpecFlowBDDTema28.Dto
             }
             return validUserDto;
         }
+    }
 }
+

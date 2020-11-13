@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumProjectJsonFile.PageObjects
+namespace SpecFlowBDDTema28.PageObjects
 {
     partial class SignUp
     {
