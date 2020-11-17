@@ -14,7 +14,7 @@ namespace SpecFlowBDDTema28.StepDefinitions
         [Given(@"I navigate to authentication page")]
         public void GivenINavigateToAuthenticationPage()
         {
-        HomePage myHomePage = new HomePage(Driver);            myHomePage.GoToAuthentificatePage();            LoginPage myLoginPage = new LoginPage(Driver);            myLoginPage.EnterCredentials("admin.test3@gmail.com", "password123");            Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
+        HomePage HomePage = new HomePage(Driver);            HomePage.NavigateToUrl(http://demosite.casqad.org/);            HomePage.GoToAuthentificatePage();            LoginPage LoginPage = new LoginPage(Driver);            LoginPage.EnterCredentials("admin.test3@gmail.com", "password123");            Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
 
         
         }

@@ -37,5 +37,9 @@ namespace SpecFlowBDDTema28.PageObjects
             PasswordRepeatTextBox.SendKeys("parola123");
             SignUpButton.Click();
         }
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

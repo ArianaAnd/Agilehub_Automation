@@ -23,5 +23,9 @@ namespace SpecFlowBDDTema28.PageObjectsCasqad
         {
             addToCartButton.Click();
         }
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

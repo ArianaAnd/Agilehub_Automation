@@ -48,7 +48,10 @@ namespace SpecFlowBDDTema28.PageObjectsG
             backToImages.Click();
         }
 
-       
 
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

@@ -39,5 +39,9 @@ namespace SpecFlowBDDTema28.PageObjects
             userPhoneAdminTextBox.SendKeys(phone);
             updateUserButton.Click();
         }
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

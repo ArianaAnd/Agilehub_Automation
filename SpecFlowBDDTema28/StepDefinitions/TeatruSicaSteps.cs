@@ -16,6 +16,7 @@ namespace SpecFlowBDDTema28.StepDefinitions
         public void WhenIGoToTheFirstActorPage()
         {
             TeatruSica teatruPage = new TeatruSica(Driver);
+            teatruPage.NavigateToUrl("https://www.teatrulsicaalexandrescu.ro/?lang=en");
             teatruPage.GoToTeatruSicaPage();
         }
         

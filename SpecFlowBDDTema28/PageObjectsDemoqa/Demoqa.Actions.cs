@@ -67,6 +67,10 @@ namespace SpecFlowBDDTema28.PageObjectsDemoqa
         {
             return element.Displayed;
         }
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
 
 
 

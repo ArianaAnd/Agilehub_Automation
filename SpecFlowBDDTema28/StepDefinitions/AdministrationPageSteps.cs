@@ -20,6 +20,8 @@ namespace SpecFlowBDDTema28.StepDefinitions
         [When(@"I navigate to Administration page")]
         public void WhenINavigateToAdministrationPage(string userEmail)
         {
+            HomePage homePage = new HomePage(Driver);
+            homePage.NavigateToUrl("http://demosite.casqad.org/");
             SignUp sigUpPage = new SignUp(Driver);
             AdminPage adminPage = new AdminPage(Driver);
             adminPage.ClickUsersBtn();

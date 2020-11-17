@@ -28,5 +28,9 @@ namespace SpecFlowBDDTema28.PageObjectsUntold
             menuButton.Click();
             homeButton.Click();
         }
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

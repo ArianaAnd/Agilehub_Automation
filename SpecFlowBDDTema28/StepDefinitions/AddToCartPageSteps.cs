@@ -14,9 +14,10 @@ namespace SpecFlowBDDTema28.StepDefinitions
         [When(@"I add a product to the cart")]
         public void WhenIAddAProductToTheCart()
         {
+            
             HomePage homePage = new HomePage(Driver);
             ProductPage productPage = new ProductPage(Driver);
-           Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
+            homePage.NavigateToUrl("http://demosite.casqad.org/");
             homePage.ViewDetails();
             productPage.AddToCart();
             

@@ -33,6 +33,9 @@ namespace SpecFlowBDDTema28.PageObjectsTeatruSica
 
 
         }
-       
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

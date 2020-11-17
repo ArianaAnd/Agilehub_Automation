@@ -21,5 +21,9 @@ namespace SpecFlowBDDTema28.PageObjectsCasqad
             _driverWait.IgnoreExceptionTypes();
 
         }
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace SpecFlowBDDTema28.StepDefinitions
         {
             var myUser = table.CreateInstance<DemoqaUserDto>();
             Demoqa demoqaFormPage = new Demoqa(Driver);
+            demoqaFormPage.NavigateToUrl("https://demoqa.com/automation-practice-form.");
             demoqaFormPage.FillDemoqaForm();
             
 

@@ -44,5 +44,9 @@ namespace SpecFlowBDDTema28.PageObjects
         {
             viewDetails.Click();
         }
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

@@ -57,6 +57,9 @@ namespace SpecFlowBDDTema28.PageObjects
         {
             Assert.IsTrue(element.Displayed);
         }
-
+        public void NavigateToUrl(string pageUrl)
+        {
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
     }
 }

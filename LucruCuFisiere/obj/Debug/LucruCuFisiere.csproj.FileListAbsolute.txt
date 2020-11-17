@@ -1,0 +1,7 @@
+C:\Users\Ariana\Desktop\Agilehub_Automation\LucruCuFisiere\bin\Debug\LucruCuFisiere.exe.config
+C:\Users\Ariana\Desktop\Agilehub_Automation\LucruCuFisiere\bin\Debug\LucruCuFisiere.exe
+C:\Users\Ariana\Desktop\Agilehub_Automation\LucruCuFisiere\bin\Debug\LucruCuFisiere.pdb
+C:\Users\Ariana\Desktop\Agilehub_Automation\LucruCuFisiere\obj\Debug\LucruCuFisiere.csprojAssemblyReference.cache
+C:\Users\Ariana\Desktop\Agilehub_Automation\LucruCuFisiere\obj\Debug\LucruCuFisiere.csproj.CoreCompileInputs.cache
+C:\Users\Ariana\Desktop\Agilehub_Automation\LucruCuFisiere\obj\Debug\LucruCuFisiere.exe
+C:\Users\Ariana\Desktop\Agilehub_Automation\LucruCuFisiere\obj\Debug\LucruCuFisiere.pdb
