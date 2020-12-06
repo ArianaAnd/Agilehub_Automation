@@ -20,19 +20,19 @@ namespace Tema28
     public class Tests : Hooks
     {
         [Test]
-        public void GoogleImage()
+        public void GoogleImage(TestData.MyTestData myDataObject)
         {
             Driver.Manage().Window.Maximize();
 
 
-            Driver.Navigate().GoToUrl("http://google.com/");
+            Driver.Navigate().GoToUrl(myDataObject.Input);
             // Arrange
             GoogleSearch homePage = new GoogleSearch(Driver);
 
             // Act
             Driver.SwitchTo().Frame(0);  //https://www.guru99.com/handling-iframes-selenium.html
             homePage.AcceptGoogleTerms();
-            homePage.SearchGoogleImage("paris");
+            homePage.SearchGoogleImage(myDataObject.OtherInfo);
             homePage.SelectGoogleImage();
 
             Driver.Navigate().Back();
