@@ -1,0 +1,10 @@
+{
+  "TestCaseName": "TestCase1",
+  "TestInput": "My input",
+  "OtherInfo": "Other Information",
+  "Values": [
+    "value1",
+    "value2",
+    "value3"
+  ]
+}
