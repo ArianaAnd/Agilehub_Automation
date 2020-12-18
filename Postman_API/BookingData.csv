@@ -1,0 +1,7 @@
+firstname,lastname,totalprice,depositpaid,checkin,checkout,additionalneeds
+AD-FirstName,AD-LastName,1313,true,2020-10-11,2020-10-13,Breakfast
+FN2,LN2,2,true,2020-10-11,2020-10-13,Breakfast
+FN3,LN3,3,true,2020-10-11,2020-10-13,Breakfast
+FN4,LN4,4,true,2020-10-11,2020-10-13,Breakfast
+FN5,LN5,5,true,2020-10-11,2020-10-13,Breakfast
+FN6,LN6,6,true,2020-10-11,2020-10-13,Breakfast

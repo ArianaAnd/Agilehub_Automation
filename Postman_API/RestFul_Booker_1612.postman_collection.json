@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "372f7b5e-c588-49a5-b1aa-97b609040a4d",
+		"name": "RestFul_Booker_1612",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateBooking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "45952a09-dcdd-46ef-9157-78382f6e1326",
+						"exec": [
+							"var response = pm.response.json();\r",
+							"pm.globals.set('bookingId', response.bookingid);\r",
+							"\r",
+							"pm.test(\"Validate a new booking has been created with id: \" + pm.globals.get(\"bookingId\"), () => {\r",
+							"    pm.expect(response.bookingid).exist\r",
+							"    pm.expect(response.booking.firstname).eql(\"AD-FirstName\")\r",
+							"    pm.expect(response.booking.lastname).eql(\"AD-LastName\")\r",
+							"    pm.expect(response.booking.totalprice).eql(1313)\r",
+							"    pm.expect(response.booking.additionalneeds).eql(\"Breakfast\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"{{firstname}}\",\r\n    \"lastname\" : \"{{lastname}}\",\r\n    \"totalprice\" : {{totalprice}},\r\n    \"depositpaid\" : {{depositpaid}},\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"{{checkin}}\",\r\n        \"checkout\" : \"{{checkout}}\"\r\n    },\r\n    \"additionalneeds\" : \"{{additionalneeds}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/booking",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"booking"
+					]
+				},
+				"description": "Validate user can create a booking"
+			},
+			"response": []
+		},
+		{
+			"name": "GetBooking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87a8d3d6-7858-4e1e-a095-5bf51b0ea969",
+						"exec": [
+							"var response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Validate values for bookingid: \" + pm.globals.get(\"bookingId\"), () => {\r",
+							"    pm.expect(response.firstname).eql(\"AD-FirstName\")\r",
+							"    pm.expect(response.lastname).eql(\"AD-LastName\")\r",
+							"    pm.expect(response.totalprice).eql(1313)\r",
+							"    pm.expect(response.additionalneeds).eql(\"Breakfast\")\r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/booking/{{bookingId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingId}}"
+					]
+				},
+				"description": "Validate that a created booking can be retrieved by id"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12348c92-ad7a-4757-8759-69263e5266d0",
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.globals.set('token', response.token)\r",
+							"let myToken = pm.globals.get('token')\r",
+							"\r",
+							"pm.test(\"Validate token has been created\", () => {\r",
+							"    pm.expect(response.token).eql(myToken)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/auth",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "Get token in order to execute delete or update"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCreatedBooking",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f5d376a7-9d1f-48f5-9969-ad6cfe1ce588",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c301c70-67fa-4c80-857a-52f441808cc3",
+						"exec": [
+							"let response = pm.response.text();\r",
+							"\r",
+							"pm.test(\"Validate user can delete booking with id: \".concat(pm.globals.get('bookingId')), () => {\r",
+							"    pm.expect(response).eql(\"Created\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/booking/{{bookingId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"booking",
+						"{{bookingId}}"
+					]
+				},
+				"description": "Validate that a created booking can be deleted"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
