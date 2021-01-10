@@ -17,3 +17,5 @@ Scenario Outline: SignUpAndLogin
 Examples: 
 | userNameValue | userEmailValue  | userPhoneValue | userAddressValue | userPasswordValue | userPasswordRepeatValue |
 | Ariana       | Ariana@yahoo.com |0733704448   | Brasov, BV     | password123       | password123             |
+
+

@@ -35,14 +35,30 @@ namespace Demosite.Casqad.StepDefinitions
             LoginPage myLoginPage = new LoginPage(Driver);
             myLoginPage.AddCredentials(user);
         }
-        
-     
-        [Then(@"I  am login in")]
+
+
+        [When(@"I click the sign up button")]
+        public void WhenIClickTheSignUpButton()
+        {
+            SignUp signUp = new SignUp(Driver);
+            signUp.InscriereButton.Click();
+        }
+
+        [When(@"I login with newly created user")]
         public void WhenILoginWithNewlyCreatedUser(Table table)
+        {
+            SignUp signUp = new SignUp(Driver);
+            var user = table.CreateInstance<UserDto>();
+            signUp.AuthenticateNewUser(user);
+
+        }
+
+        [Then(@"I am successfully logged in with new aacount")]
+        public void ThenIAmSuccessfullyLoggedInWithNewAacount()
         {
             Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
         }
-        
-   
+
+
     }
 }

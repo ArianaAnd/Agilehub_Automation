@@ -15,11 +15,17 @@ namespace Demosite.Casqad.StepDefinitions
 
     public class AddToCartAdminSteps:Hooks
     {
-        private readonly ScenarioContext _scenarioContext;
+        //private readonly ScenarioContext _scenarioContext;
 
-        public AddToCartAdminSteps(ScenarioContext scenarioContext)
+        //public AddToCartAdminSteps(ScenarioContext scenarioContext)
+        //{
+        //    _scenarioContext = scenarioContext;
+        //}
+
+        private readonly ScenarioContext _injectedContext;
+        public AddToCartAdminSteps(ScenarioContext context)
         {
-            _scenarioContext = scenarioContext;
+            _injectedContext = context;
         }
 
         [Given(@"I login with admmin")]

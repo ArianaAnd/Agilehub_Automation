@@ -17,11 +17,12 @@ namespace Demosite.Casqad.PageObjects
         private IWebElement Button => _driver.FindElement(By.XPath("//*[@id='collapsibleNavbar']/ul[2]/li[2]/a"));
         public IWebElement InscriereButton => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/form/button"));
 
-        private IWebElement PasswordextBox => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/form/div[5]/input"));
+        private IWebElement PasswordTextBox => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/form/div[5]/input"));
         private IWebElement userEmailTextBox => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/form/div[1]/input"));
         private IWebElement userPasswordTextBox => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/form/div[2]/input"));
-        private IWebElement userAAuthenticateButton => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/form/button"));
+        private IWebElement userAuthenticateButton => _driver.FindElement(By.XPath("/html/body/div/div/div[2]/form/button"));
 
+        public IWebElement Deconectare => _driver.FindElement(By.XPath("/html/body/div/nav/div/ul[2]/li[2]/a"));
 
 
     }

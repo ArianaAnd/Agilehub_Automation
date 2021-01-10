@@ -108,6 +108,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\AddToCartAdminSteps.cs" />
     <Compile Include="StepDefinitions\AuthenticateAndLoginSteps.cs" />
+    <Compile Include="StepDefinitions\AuthenticateAndLoginStepsDependencyInjection.cs" />
     <Compile Include="StepDefinitions\EditUserAsAdminSteps.cs" />
     <Compile Include="StepDefinitions\LoginAndLogoutSteps.cs" />
     <Compile Include="StepDefinitions\SignUpAndLoginSteps.cs" />
