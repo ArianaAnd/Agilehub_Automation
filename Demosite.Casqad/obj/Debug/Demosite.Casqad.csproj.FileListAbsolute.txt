@@ -1,0 +1,2 @@
+C:\Users\Ariana\Desktop\Agilehub_Automation\Demosite.Casqad\obj\Debug\Demosite.Casqad.csprojAssemblyReference.cache
+C:\Users\Ariana\Desktop\Agilehub_Automation\Demosite.Casqad\obj\Debug\Demosite.Casqad.csproj.CoreCompileInputs.cache

@@ -1,0 +1,29 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Andrt=isan Ariana",
+    "email": "andrisan_ariana@yahoo.com",
+    "address": "Brasov",
+    "phone": "0733704448",
+    "password": "password123"
+
+  },
+
+  {
+    "id": 2,
+    "name": "Ariana Andrisan",
+    "email": "ariana.andrisan@yahoo.com",
+    "address": "Vrancea",
+    "phone": "0733704448",
+    "password": "password124"
+  },
+
+  {
+    "id": 3,
+    "address": "Brasov",
+    "email": "admin.test3@gmail.com",
+    "name": "Admin",
+    "phone": "0733704448",
+    "password": "password678"
+  }
+]

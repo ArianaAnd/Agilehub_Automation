@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demosite.Casqad", "Demosite.Casqad.csproj", "{958C4BC6-76AE-45C4-A14A-61D11AD5AE4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{958C4BC6-76AE-45C4-A14A-61D11AD5AE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{958C4BC6-76AE-45C4-A14A-61D11AD5AE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{958C4BC6-76AE-45C4-A14A-61D11AD5AE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{958C4BC6-76AE-45C4-A14A-61D11AD5AE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CCD7C91-A01B-45D1-8F3A-59460E497708}
+	EndGlobalSection
+EndGlobal
