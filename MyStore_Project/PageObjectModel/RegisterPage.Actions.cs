@@ -22,5 +22,33 @@ namespace MyStore_Project.PageObjectModel
             //ignora exceptiile in momentul in care nu gaseste elementul
             _driverWait.IgnoreExceptionTypes();
         }
+        public void AddRegistrationCredentials(UserDto user)
+        {
+            System.Threading.Thread.Sleep(2000);
+            maleGenderRadio.Click();
+            firstNameTextBox.Click();
+            firstNameTextBox.SendKeys(user.userFirstName);
+            LastNameTextBox.SendKeys(user.userLastName);
+            passwordTextBox.Click();
+            passwordTextBox.SendKeys(user.userPassword);
+            daysDropdown.Click();
+            day1DropdownOption.Click();
+            monthsDropdown.Click();
+            firstMonthDropdownOption.Click();
+            yearsDropdown.Click();
+            YearDropdownOption.Click();
+            addressFirstNameTextBox.Click();
+            addressFirstNameTextBox.SendKeys(user.userAddressFirstName);
+            addressLastNameTextBox.SendKeys(user.userAddressLastName);
+            addressTextBox.Click();
+            addressTextBox.SendKeys(user.userAddress);
+            cityTextBox.Click();
+            cityTextBox.SendKeys(user.userCity);
+            stateDropdown.Click();
+            stateDropdownOption.Click();
+            phoneTextBox.Click();
+            phoneTextBox.SendKeys(user.userPhone);
+
+        }
     }
 }
