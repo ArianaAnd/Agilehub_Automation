@@ -24,16 +24,12 @@ namespace SpecflowBDD_PhpTravel.PageObjects
 
         }
 
-        public void CompleteFields()
-        {
-            DestinationField.SendKeys("Instambul, Turkey");
-            CheckInCalendar.SendKeys("27/12/2020");
-            CheckOutCalendar.SendKeys("29/12/2020");
+    
 
 
 
 
         }
-    }
+    
 }
 

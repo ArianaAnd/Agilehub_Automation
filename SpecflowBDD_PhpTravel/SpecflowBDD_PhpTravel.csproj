@@ -89,16 +89,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hooks.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="PageObjects\HomePage.Locators.cs" />
     <Compile Include="PageObjects\HomePage.Actions.cs" />
-    <Compile Include="StepDefinitions\HotelReservationSteps.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="PageObjects\Flights.Actions.cs" />
+    <Compile Include="PageObjects\Hotels.Actions.cs" />
+    <Compile Include="PageObjects\Flights.Locators.cs" />
+    <Compile Include="PageObjects\Hotels.Locators.cs" />
+    <Compile Include="PageObjects\Login.Actions.cs" />
+    <Compile Include="PageObjects\MyAccount.Actions.cs" />
+    <Compile Include="PageObjects\MyAccount.Locators.cs" />
+    <Compile Include="PageObjects\SignUp.Actions.cs" />
+    <Compile Include="PageObjects\SignUp.Locators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepDefinitions\LoginAndSignUpSteps.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserDto.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\HotelsReservation.feature" />
-    <None Include="Features\LoginAndLogout.feature" />
+    <None Include="Features\LoginAndSignUp.feature" />
     <None Include="packages.config" />
+    <Compile Include="PageObjects\Login.Locators.cs" />
+    <None Include="Users.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
