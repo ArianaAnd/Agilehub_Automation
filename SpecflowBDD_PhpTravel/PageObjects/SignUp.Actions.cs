@@ -24,7 +24,7 @@ namespace SpecflowBDD_PhpTravel.PageObjects
         }
         public void EnterSignup()
         {
-            Si.Click();
+           
         }
 
         public void SigUpFormFill(UserDto user)
